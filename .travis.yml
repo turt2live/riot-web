@@ -1,4 +1,7 @@
 language: node_js
+cache:
+  directories:
+    - $HOME/.npm
 node_js:
     - 6   # node v6, to match jenkins
 install:
