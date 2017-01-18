@@ -244,6 +244,7 @@ describe('loading:', function () {
             loadApp();
 
             q.delay(1).then(() => {
+                console.log('checking for spinner');
                 // we expect a spinner
                 assertAtSyncingSpinner(matrixChat);
 
