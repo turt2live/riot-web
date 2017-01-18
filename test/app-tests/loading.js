@@ -248,6 +248,7 @@ describe('loading:', function () {
                 // we expect a spinner
                 assertAtSyncingSpinner(matrixChat);
 
+                console.log("Found spinner");
                 return httpBackend.flush();
             }).then(() => {
                 // once the sync completes, we should have a directory
@@ -255,6 +256,9 @@ describe('loading:', function () {
                 ReactTestUtils.findRenderedComponentWithType(
                     matrixChat, sdk.getComponent('structures.RoomDirectory'));
                 expect(windowLocation.hash).toEqual("#/directory");
+            }).catch((e) => {
+                console.log("failed: "+e);
+                throw(e);
             }).done(done, done);
         });
 
