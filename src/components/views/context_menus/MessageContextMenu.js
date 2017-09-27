@@ -147,6 +147,7 @@ module.exports = React.createClass({
         let redactButton;
         let cancelButton;
         let forwardButton;
+        let pinButton;
         let viewSourceButton;
         let viewClearSourceButton;
         let unhidePreviewButton;
@@ -184,6 +185,11 @@ module.exports = React.createClass({
                 forwardButton = (
                     <div className="mx_MessageContextMenu_field" onClick={this.onForwardClick}>
                         { _t('Forward Message') }
+                    </div>
+                );
+                pinButton = (
+                    <div className="mx_MessageContextMenu_field" onClick={this.onPinClick}>
+                        { _t('Pin Message') }
                     </div>
                 );
             }
@@ -246,6 +252,7 @@ module.exports = React.createClass({
                 {redactButton}
                 {cancelButton}
                 {forwardButton}
+                {pinButton}
                 {viewSourceButton}
                 {viewClearSourceButton}
                 {unhidePreviewButton}
